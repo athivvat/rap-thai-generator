@@ -13,7 +13,7 @@ from keras.utils import np_utils
 
 def get_words():
     words = []
-    for file in glob.glob("//dataset/*.txt"):
+    for file in glob.glob("./dataset/*.txt"):
         with open(file) as f:
             lines = f.read().splitlines()
 
@@ -75,7 +75,7 @@ def create_network(normalized_input, n_vocab):
 
 
 def train(model, normalized_input, network_output):
-    filepath = '//training_weights/thai-music-generator-{epoch:02d}-{loss:.4f}.hdf5'
+    filepath = './training_weights/thai-music-generator-{epoch:02d}-{loss:.4f}.hdf5'
     checkpoint = ModelCheckpoint(
         filepath,
         monitor='loss',

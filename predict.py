@@ -12,7 +12,7 @@ from keras.utils import np_utils
 
 def get_words():
     words = []
-    for file in glob.glob("//dataset/*.txt"):
+    for file in glob.glob("./dataset/*.txt"):
         with open(file) as f:
             lines = f.read().splitlines()
 
@@ -92,9 +92,9 @@ def predict(words, seed_words):
     prediction_output = []
 
     model = create_network(normalized_input, n_vocab)
-    model.load_weights('/Users/80094/Workspace/labs/thai-rap-lyrics-generator/training_weights/thai-music-generator-94-0.3525.hdf5')
+    model.load_weights('/Users/80094/Workspace/labs/thai-rap-lyrics-generator/training_weights/thai-music-generator-99-0.1968.hdf5')
 
-    for word_index in range(10):
+    for word_index in range(120):
         prediction_input = np.reshape(pattern, (1, len(pattern), 1))
         prediction_input = prediction_input / float(n_vocab)
 
